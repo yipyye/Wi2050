@@ -194,4 +194,4 @@ s0(a,"male") = popg0(a,"male")*s0shm(a,"s0sh")*.01;
 display s0;
 
 execute_unload 'egyptdata1.gdx' popg0,fert0,ferthic0,surv0,w0,s0;
-execute 'gdxxrw egyptdata1.gdx par=popg0 rng=popg0!A1 par=fert0 rng=fert0!A1 par=ferthic0 rng=ferthic0!A1 par = surv0 rng=surv0!A1 par=w0 rng=w0!A1 par=s0 rng=s0!A1' ;
+execute 'gdxxrw egyptdata1.gdx output=egyptdata1.xlsx par=popg0 rng=popg0!A1 par=fert0 rng=fert0!A2 rdim=1 text="egypt" rng=fert0!B1 par=ferthic0 rng=ferthic0!A2 rdim=1 text="hic" rng=ferthic0!B1 par = surv0 rng=surv0!A1 par=w0 rng=w0!A1 par=s0 rng=s0!A1' ;
