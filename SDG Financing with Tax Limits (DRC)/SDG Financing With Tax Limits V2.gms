@@ -9,7 +9,7 @@ $ontext
 This section contains the set declaration and imported parameters(to be added).
 $offtext
 
-* Set Declaration
+*Set Declaration
 *****************
 
 *Define the years 2022-2030 as well as the starting and ending year
@@ -63,7 +63,7 @@ Sets    a1(a)       Age 1 (for births)
         ;
 
 *Define scenarios for tax limits and no tax limits
-Set scen /lim,nolim/;
+Set     scen /lim,nolim/;
 
 * Parameter Declaration
 ***********************
@@ -110,11 +110,11 @@ Parameter   bed(sec,e)  Production function coefficients on labor by sector and 
             sert 0.1
             sern 0.1
             pub  0.1/
-            bkf(sec)    Production function coefficient on infrastructure capital;
+            bkf(sec)    Production function coeff. on infrastructure capital;
             bkf(sec) = .10;
-parameter   ben(sec)    Production function coefficient on power;
+Parameter   ben(sec)    Production function coeff. on power;
             ben(sec) = .05;
-parameter   bland(sec)  Production function coefficient on land
+Parameter   bland(sec)  Production function coeff. on land
             /sub .30
             ag   .30
             mine .1
@@ -128,7 +128,7 @@ parameter   bland(sec)  Production function coefficient on land
             ed   .05
             heal .05
             pub  .05/;
-parameter  bmin(sec)    Production function coefficient on minerals
+Parameter  bmin(sec)    Production function coeff. on minerals
             /sub  0.0
             ag   0.0
             mine 0.2
@@ -142,10 +142,10 @@ parameter  bmin(sec)    Production function coefficient on minerals
             heal 0.0
             ed   0.0
             pub  0.0/;
-parameter   blab(sec)   Coeff. on labor is remainder after subtract share for land minerals capital infra and energy
+Parameter   blab(sec)   Coeff. on labor is remainder after subtract share for land minerals capital infra and energy
             blab(sec) = 1-bland(sec)-bmin(sec)-bk(sec)-bkf(sec)-ben(sec);
 
-Parameter   k0(sec)       2022 initial capital share by sector
+Parameter   k0(sec)     2022 initial capital share by sector
             /sub   0.1
             ag    1.0
             mine  1.0
@@ -188,7 +188,7 @@ Scalar      ek          Demand for capital stock
             min0 = 10;
             landrural0 = 50;
 
-Parameter pi(sec)       Total Factor Productivity
+Parameter   pi(sec)     Total Factor Productivity
             /sub   .2
             ag     1
             mine   1
@@ -223,13 +223,13 @@ $GDXIN
 
 display popg0,fert0,surv0,w0,s0,ferthic0,bed;
 
-Parameter   bled(e,sec)     Coefficient on labor by sector times coefficient on labor by sector and education (why?);
+Parameter   bled(e,sec) Coeff. on labor by sector times coefficient on labor by sector and education (why?);
             bled(e,sec) = blab(sec)*bed(sec,e);
             
 *Confirm that sum of coefficients in Cobb-Douglas production function equals one for each sector
-Parameter   bltot(sec)      Total sum of coefficients by sector;
+Parameter   bltot(sec)  Total sum of coefficients by sector;
             bltot(sec) = sum(e,bled(e,sec)) + ben(sec) + bk(sec) + bkf(sec) + bland(sec);
-Display bltot,bled;
+Display     bltot,bled;
 
 Parameter   tfr0(fer)       Initial total fertility rate
             survive0(a,g)   Initial survival rate by age and gender
@@ -240,25 +240,25 @@ Parameter   tfr0(fer)       Initial total fertility rate
             survivehi0(a,"female") = surv0(a,"fhic");
             survivehi0(a,"male") = surv0(a,"mhic");
 
-Alias   (e,ea)
-        (as,aa);
+Alias       (e,ea)
+            (as,aa);
 
 * Subset definition
 *********************
 
-tstart(t) = yes$(ord(t) eq 1);
-tend(t) = yes$(ord(t) eq card(t));
-a1(a) = yes$(ord(a) eq 1);
-ap(a) = yes$(ord(a) ge 6 and ord(a) le 12);
-als(a) = yes$(ord(a) ge 13 and ord(a) le 15);
-aus(a) = yes$(ord(a) ge 16 and ord(a) le 18);
-ater(a) = yes$(ord(a) ge 19 and ord(a) le 22);
-as(a) = yes$(ord(a) ge 12 and ord(a) le 23);
-aw(a) = yes$(ord(a) ge 12 and ord(a) le 65);
-af2049(a) = yes$(ord(a) ge 20 and ord(a) le 49);
-af(a) = yes$(ord(a) ge 15 and ord(a) le 49);
+tstart(t) =     yes$(ord(t) eq 1);
+tend(t) =       yes$(ord(t) eq card(t));
+a1(a) =         yes$(ord(a) eq 1);
+ap(a) =         yes$(ord(a) ge 6 and ord(a) le 12);
+als(a) =        yes$(ord(a) ge 13 and ord(a) le 15);
+aus(a) =        yes$(ord(a) ge 16 and ord(a) le 18);
+ater(a) =       yes$(ord(a) ge 19 and ord(a) le 22);
+as(a) =         yes$(ord(a) ge 12 and ord(a) le 23);
+aw(a) =         yes$(ord(a) ge 12 and ord(a) le 65);
+af2049(a) =     yes$(ord(a) ge 20 and ord(a) le 49);
+af(a) =         yes$(ord(a) ge 15 and ord(a) le 49);
 
-*Variable Declaration
+*Variable declaration
 *********************
 
 Positive Variables  lfe(e,t)        Labor force as a function of education and year
@@ -348,7 +348,7 @@ Variable            util            Main utility variable
                     debtgdp(t)      Debt-GDP ratio by year (is this always positive?)
                     nx(t)           Net exports by year;
 
-*Model Equation
+*Model equations
 ***************
                
 Equations           eq1(a,g,t)      Secondary school pop by age and gender at t+1
@@ -444,13 +444,13 @@ Equations           eq1(a,g,t)      Secondary school pop by age and gender at t+
                     governgdp(t)    Govt budget as share of GDP at time t
                     taxmax(t)       Maximum tax generated from share of govt GDP set as tax limit
                     marginalpk(sec,t)   Marginal product of capital given as capital production over total capital
-                    energyhpc(t)        Energy to housing per capita
-                    landtorural(t)      Total land in rural sector at time t
-                    mintot(t)           Total production in mineral sector at time t
-                    nomgdp(sec,t)       Nominal GDP as sum of wages by education and sector over sector-specific blab
-                    pricegdp(sec,t)     Price GDP per sector as nominal GDP divided by sector output
-                    nomgdptot(t)        Total nominal GDP
-                    healthgdp(t)        Contribution of health to GDP as share of total nominal GDP;
+                    energyhpc(t)    Energy to housing per capita
+                    landtorural(t)  Total land in rural sector at time t
+                    mintot(t)       Total production in mineral sector at time t
+                    nomgdp(sec,t)   Nominal GDP as sum of wages by education and sector over sector-specific blab
+                    pricegdp(sec,t) Price GDP per sector as nominal GDP divided by sector output
+                    nomgdptot(t)    Total nominal GDP
+                    healthgdp(t)    Contribution of health to GDP as share of total nominal GDP;
                     
 eq1(as+1,g,t+1)..  s(as+1,g,t+1) =e= cont(as,t)*s(as,g,t);
 eq2(g,t+1)..  s("12",g,t+1) =e= cont12(t)*pop("11",g,t);
@@ -556,7 +556,7 @@ utility..             util =e= sum(t,disc(t)* ut(t)) + (1/r)*sum(tend,disc(tend)
 *Results Calculation
 ********************
 
-model sdgfinance using /all/;
+Model sdgfinance using /all/;
 
 poptot.lo(t) = .00001;
 en.lo(sec,t) = .001;
@@ -585,25 +585,24 @@ ngdptot.lo(t) = .001;
 
 *solve sdgfinance maximizing util using dnlp;
 
-parameter dlim(scen)
+Parameter   dlim(scen)  Debt limit by scenario
+            /lim  10
+            nolim 10/;
 
-/lim  10
- nolim 10/;
+Parameter   rs(scen)    
+            /lim 0.15
+            nolim 0.05/;
 
-parameter rs(scen)
+Parameter   taxmaxs(scen)
+            /lim  0.1
+            nolim 0.4/;
 
-/lim 0.15
-nolim 0.05/;
-
-parameter taxmaxs(scen)
-/lim  0.1
-nolim 0.4/;
-
-loop(scen,
+Loop(scen,
 debtqlim = dlim(scen);
 r = rs(scen);
 taxlim = taxmaxs(scen);
-solve sdgfinance maximizing util using dnlp;
+
+Solve sdgfinance maximizing util using dnlp;
 ks(scen,sec,t) = k.L(sec,t);
 debtgdps(scen,t) = debtgdp.L(t);
 contrpcs(scen,t) = contrpc.L(t);
@@ -629,17 +628,17 @@ edgdps(scen,t) = edgdp.L(t);
 healgdps(scen,t) = healgdp.L(t););
 
 
-display pas, lsas, usas, tsas, gdpts, kffs, kres, contrpcs, debtgdps, edgdps, healgdps;
+Display pas, lsas, usas, tsas, gdpts, kffs, kres, contrpcs, debtgdps, edgdps, healgdps;
 
-display mpks, invs;
+Display mpks, invs;
 
-display govgdps;
+Display govgdps;
 
-display schools;
+Display schools;
 
-display q.L,emp.L;
+Display q.L,emp.L;
 
-display ngdp.L, pgdp.L;
+Display ngdp.L, pgdp.L;
 
 *execute_unload 'data.gdx' qpcs, ks, conpcs, births, eduuss;
 *execute 'gdxxrw data.gdx par=qpcs rng=qpcs!A1 par=ks rng=ks!A1 par = conpcs rng=conpcs!A1 par = births rng=births!A1 par=eduuss rng=eduss!A1
