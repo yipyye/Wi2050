@@ -311,18 +311,18 @@ Positive variables  lfe(e,t)        Labor force as a function of education and y
                     hlunitcost(t)
                     gcost(t);
 
-Variable            util
-                    ut(t)
-                    wage(e,t)
-                    nx(t)
+Variable            util            Main utility variable
+                    ut(t)           Utility by year
+                    wage(e,t)       Wage as a function of education level and time
+                    nx(t)           Net exports by year
                     test;
 
-Equations           eq1(a,g,t)
-                    eq2(g,t)
-                    eq3(a,g,t)
-                    eq4(a,a,t)
-                    eq5(t)
-                    eq6(a,g,t)
+Equations           eq1(a,g,t)      Secondary school pop by age and gender at t+1
+                    eq2(g,t)        
+                    eq3(a,g,t)      Population survival each year by age and gender
+                    eq4(a,a,t)      Fertility dependent on age and education level
+                    eq5(t)          Expected births per year
+                    eq6(a,g,t)      Equalizes gender ratio at birth
                     eq7(t)
                     eq8(t)
                     eq9(t)
