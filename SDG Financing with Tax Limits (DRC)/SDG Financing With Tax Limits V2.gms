@@ -214,14 +214,14 @@ Parameter   popg0(a,g)      Initial population by age and gender
             surv0(a,surv)   Initial survival rates by age
             w0(a,a,g)       Initial working age population by age and gender
             s0(a,g)         Initial school achievement by age and gender
-            ferthic0(a,fer) Initial high-income country fertility by age
+            ferthic0(a,fer) Initial high-income country fertility by age;
 
 $CALL GDXXRW drcdatainput.xlsx Index=Index!a1 trace=3
 $GDXIN drcdatainput.gdx
 $LOAD popg0=D1 fert0= D2 surv0=D3 w0=D4 s0=D5 ferthic0=D6 bed=D7
 $GDXIN
 
-display popg0,fert0,surv0,w0,s0,ferthic0,bed;
+Display     popg0,fert0,surv0,w0,s0,ferthic0,bed;
 
 Parameter   bled(e,sec) Coeff. on labor by sector times coefficient on labor by sector and education (why?);
             bled(e,sec) = blab(sec)*bed(sec,e);
@@ -324,22 +324,22 @@ Positive Variables  lfe(e,t)        Labor force as a function of education and y
                     eattain(a,t)    Educational attainment as a function of age and year
                     w(a,a,g,t)      Working population as a func of two age elements gender and year
                     worka(a,t)      Working age as a function of age and time
-                    pop(a,g,t)      Age and gender-specific population by year
-                    poptot(t)       Total population by year
-                    pa(t)           Primary attainment by year
-                    lsa(t)          Lower secondary attainment by year
-                    usa(t)          Upper secondary attainment by year
-                    tsa(t)          Tertiary attainment by year
-                    lf(t)           Total labor force by year
-                    h(t)            housing?
+                    pop(a,g,t)      Age and gender-specific population as a function of year
+                    poptot(t)       Total population as a function of year
+                    pa(t)           Primary attainment as a function of year
+                    lsa(t)          Lower secondary attainment as a function of year
+                    usa(t)          Upper secondary attainment as a function of year
+                    tsa(t)          Tertiary attainment as a function of year
+                    lf(t)           Total labor force as a function of year
+                    h(t)            Housing(?)
                     birth(t)        Birth rate as a function of year
                     fert(a,a,t)     Fertility as a function of two age elements and year
                     inv(sec,t)      Investment by sector as a function of year
                     ngdp(sec,t)     Nominal GDP by sector as a function of year
                     pgdp(sec,t)     Price GDP per sector as a function of year
-                    ngdptot(t)      Total nominal GDP by year
-                    edgdp(t)        Education contribution to GDP by year
-                    healgdp(t)      Health contribution to GDP by year;
+                    ngdptot(t)      Total nominal GDP as a function of year
+                    edgdp(t)        Education contribution to GDP as a function of year
+                    healgdp(t)      Health contribution to GDP as a function of year;
 
 Variable            util            Main utility variable
                     ut(t)           Utility by year
