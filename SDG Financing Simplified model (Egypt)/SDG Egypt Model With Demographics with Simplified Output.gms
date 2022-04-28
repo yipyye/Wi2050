@@ -297,17 +297,17 @@ Positive variables  lfe(e,t)        Labor force as a function of education and y
                     cinvff(t)
                     cinvf(t)
                     cinvre(t)
-                    debt(t)         Debt level by year
-                    debtgdp(t)      Debt-GDP ratio by year
-                    schoolage(t)
-                    enrollrate(t)
-                    birthrate(t)
+                    debt(t)         Debt level as a function of year
+                    debtgdp(t)      Debt-GDP ratio as a function of year
+                    schoolage(t)    School age as a function of year (?)
+                    enrollrate(t)   School enrollment rate as a function of year (?)
+                    birthrate(t)    Birthrate as a function of year (?)
                     fbyage(a,t)
-                    tfr(t)
+                    tfr(t)          Total fertility rate as a function of year (?)
                     invfgdp(t)
                     pubgdp(t)
                     outlaygdp(t)
-                    edunitcost(t)
+                    edunitcost(t)   Unit cost of education as a function of year (?)
                     hlunitcost(t)
                     gcost(t);
 
@@ -315,37 +315,37 @@ Variable            util            Main utility variable
                     ut(t)           Utility by year
                     wage(e,t)       Wage as a function of education level and time
                     nx(t)           Net exports by year
-                    test;
+                    test            Test variable (?);           
 
 Equations           eq1(a,g,t)      Secondary school pop by age and gender at t+1
-                    eq2(g,t)        
+                    eq2(g,t)        Population by gender and year starting primary school at age 6 (?)
                     eq3(a,g,t)      Population survival each year by age and gender
                     eq4(a,a,t)      Fertility dependent on age and education level
                     eq5(t)          Expected births per year
                     eq6(a,g,t)      Equalizes gender ratio at birth
-                    eq7(t)
-                    eq8(t)
-                    eq9(t)
-                    eq10(t)
-                    eq11(t)
-                    eq12(t)
-                    eq13(t)
-                    eq14(t)
-                    eq15(a,a,g,t)
-                    eq16(a,a,g,t)
-                    eq17(a,g,t),
-*eq18(a,t),
-                    eq19(a,t)
-                    eq20(t)
-                    eq21(t)
-                    eq22(t)
+                    eq7(t)          Primary school enrollment assuming universal enrollment
+                    eq8(t)          Total population of lower secondary age
+                    eq9(t)          Total population of upper secondary age
+                    eq10(t)         Total population of tertiary education age
+                    eq11(t)         Lower secondary enrollment rate
+                    eq12(t)         Upper secondary enrollment rate
+                    eq13(t)         Tertiary education enrollment rate
+                    eq14(t)         Total population in school (primary lower sec upper sec tertiary)
+                    eq15(a,a,g,t)   Total dropouts per year as age-dependent dropout rate by school pop per year starting at grade 6 secondary school(?)
+                    eq16(a,a,g,t)   Working population at time t+1 starting at grade 6 secondary school(?)
+                    eq17(a,g,t)     Age 12 working population equals 0    
+*eq18(a,t)
+                    eq19(a,t)       Educational attainment by age and time
                     eq19a(t)
                     eq19b(t)
                     eq19c(t)
                     eq19d(t)
                     eq19e(t)
-                    eq23(t)
-                    eq24(t)
+                    eq20(t)         Total labor force summed by educational attainment per year
+                    eq21(t)         Primary attainment in year t as sum of attainment for 12 13 and 14 year olds
+                    eq22(t)         Lower sec attainment in year t as sum of attainment for 15 16 and 17 year olds
+                    eq23(t)         Upper sec attainment as sum of attainment for 18 19 20 and 21 year olds
+                    eq24(t)         Tertiary attainment as sum of attainment for 22 year olds
                     eq25(t)
                     eq26(t)
                     eq27(t)
