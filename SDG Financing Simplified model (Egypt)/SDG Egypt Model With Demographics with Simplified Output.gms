@@ -206,7 +206,7 @@ Parameter   years(e)
             ts 16/;
 
 Positive variables  lfe(e,t)        Labor force as a function of education and year
-                    schoolsh(t)
+                    schoolsh(t)     Share of population in school
                     schooltsa(t)
                     q(t)            Output as a function of year
                     qpc(t)          Output per capita as a function of year
@@ -342,48 +342,49 @@ Equations           eq1(a,g,t)      Secondary school pop by age and gender at t+
                     eq19d(t)
                     eq19e(t)
                     eq20(t)         Total labor force summed by educational attainment per year
+                    eq21a(t)        No school attainment in year t as sum of attainment for 1 to 5 year olds
                     eq21(t)         Primary attainment in year t as sum of attainment for 12 13 and 14 year olds
                     eq22(t)         Lower sec attainment in year t as sum of attainment for 15 16 and 17 year olds
                     eq23(t)         Upper sec attainment as sum of attainment for 18 19 20 and 21 year olds
                     eq24(t)         Tertiary attainment as sum of attainment for 22 year olds
-                    eq25(t)
-                    eq26(t)
-                    eq27(t)
-                    eq28(t)
-                    eq29(t)
-                    eq30(t)
-                    eq31(t)
-                    eq32(t)
-                    eq33(t)
-                    eq34(t)
-                    eq36(a,g)
-                    eq37(a,g)
-                    eq38(a,a,g)
-                    eq39(t)
-                    eq40(t)
-                    eq41(t)
-                    eq42(t)
-                    eq43(t)
-                    eq44(t)
-                    eq45(t)
-                    eq46(t)
-                    eq47(t)
-                    eq48(t)
-                    eq49(t)
+                    eq25(t)         Total population summation at time t
+                    eq26(t)         Total population enrolled in primary at time t
+                    eq27(t)         Total population enrolled in lower secondary at time t
+                    eq28(t)         Total population enrolled in upper secondary at time t
+                    eq29(t)         Total population enrolled in tertiary at time t
+                    eq30a(t)        Labor force with no schooling at time t
+                    eq30(t)         Primary-educated labor force at time t
+                    eq31(t)         Lower sec educated labor force at time t
+                    eq32(t)         Upper sec educated labor force at time t
+                    eq33(t)         Tertiary educated labor force at time t
+                    eq34(t)         Percentage of total population in school at time t
+                    eq36(a,g)       Education for school-aged people in 2022
+                    eq37(a,g)       Population in 2022
+                    eq38(a,a,g)     Worker population in 2022
+                    eq39(t)         Set continuation rate = 0.95 at age 12
+                    eq40(t)         Set continuation rate = 1 at age 13
+                    eq41(t)         Set continuation rate = 1 at age 14
+                    eq42(t)         Set continuation rate = 1 at age 16
+                    eq43(t)         Set continuation rate = 1 at age 17
+                    eq44(t)         Set continuation rate = 1 at age 19
+                    eq45(t)         Set continuation rate = 1 at age 20
+                    eq46(t)         Set continuation rate = 1 at age 21
+                    eq47(t)         Set continuation rate = 1 at age 15
+                    eq48(t)         Set continuation rate = 0.5 at age 18
+                    eq49(t)         Set continuation rate = 0 at age 22 
                     eq50
                     eq51(t)
                     eq52(a,t)
                     eq53(t)
                     eq54(t)
                     eq30a(t)
-                    eq55(t)
-                    eq56(t)
-                    eq57(t)
-                    eq21a(t)
-                    eq58(t)
-                    eq59(t)
-                    eq60(t)
-                    eq61(t)
+                    eq55(t)         Set continuation rate = 1 at age 7
+                    eq56(t)         Set continuation rate = 1 at age 8
+                    eq57(t)         Set continuation rate = 1 at age 9
+                    eq58(t)         Set continuation rate = 1 at age 10
+                    eq59(t)         Set continuation rate = 1 at age 11
+                    eq60(t)         Set continuation rate = 1 at age 6
+                    eq61(t)         
                     eq62(t)
                     eq63(t)
                     eq64(a,t)
@@ -448,7 +449,7 @@ eq44(t).. cont("19",t) =e= 1;
 eq45(t).. cont("20",t) =e= 1;
 eq46(t).. cont("21",t) =e= 1;
 eq47(t).. cont("15",t) =e= 1;
-eq48(t).. cont("18",t) =e= .5;
+eq48(t).. cont("18",t) =e= 0.5;
 eq49(t).. cont("22",t) =e= 0;
 eq50.. test =e= sum(t,control(t)*control(t));
 eq51(t).. schoolyr(t) =e= sum(a,eattain(a,t)*(ord(a)-6))/sum(a,.000001+eattain(a,t));
