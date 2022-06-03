@@ -226,32 +226,32 @@ Equations           eq1(a,g,t)          Student population by age and gender at 
                     eq13(t)             Tertiary school enrollment rate
                     eq14(t)             Total population in school (primary lower sec upper sec tertiary)
                     eq15(a,a,g,t)       Total drop-outs from school at each age without double counting
-                    eq16(a,a,g,t)       Total workforce by age and gender at t+1 equals those already working at t plus new drop-outs
+                    eq16(a,a,g,t)       Total eligible-for-work population by age and gender at t+1 equals those already working at t plus new drop-outs
                     eq17(a,g,t)         Age 12 working population equals 0    
 *eq18(a,t),
-                    eq19(a,t),
-                    eq19a(t),
-                    eq19b(t),
-                    eq19c(t),
-                    eq19d(t),
-                    eq19e(t),
-                    eq20(t),
-                    eq21(t),
-                    eq21a(t),
-                    eq22(t),
-                    eq23(t),
-                    eq24(t),
-                    eq25(t),
-                    eq26(t),
-                    eq27(t),
-                    eq28(t),
-                    eq29(t),
-                    eq30(t),
-                    eq30a(t),
-                    eq31(t),
-                    eq32(t),
-                    eq33(t),
-                    eq34(t),
+                    eq19(a,t)           Total eligible-for-work population given a certain level of education attainment
+                    eq19a(t)            No one of age 1 should be eiligible for work
+                    eq19b(t)            No one of age 2 should be eiligible for work
+                    eq19c(t)            No one of age 3 should be eiligible for work
+                    eq19d(t)            No one of age 4 should be eiligible for work
+                    eq19e(t)            No one of age 5 should be eiligible for work
+                    eq20(t)             Total labor force depends on labor force participation at each level of education attainment
+                    eq21a(t)            Labor force that did not complete primary school (assumes 100% labor force participation)
+                    eq21(t)             Labor force that completed primary school but did not complete lower secondary school or higher
+                    eq22(t)             Labor force that completed lower secondary school but did not complete upper secondary school or higher
+                    eq23(t)             Labor force that completed upper secondary school but did not complete tertiary school
+                    eq24(t)             Labor force that completed tertiary school
+                    eq25(t)             Total population at time t
+                    eq26(t)             Enables "school" to track total population of age for primary school
+                    eq27(t)             Enables "school" to track total population of age for lower secondary school
+                    eq28(t)             Enables "school" to track total population of age for upper secondary school
+                    eq29(t)             Enables "school" to track total population of age for tertiary school
+                    eq30a(t)            Enables "lfe" to track labor force that did not complete primary school
+                    eq30(t)             Enables "lfe" to track labor force that completed primary school but did not complete lower secondary school or higher
+                    eq31(t)             Enables "lfe" to track labor force that completed lower secondary school but did not complete upper secondary school or higher
+                    eq32(t)             Enables "lfe" to track labor force that completed upper secondary school but did not complete tertiary school
+                    eq33(t)             Enables "lfe" to track labor force that completed tertiary school
+                    eq34(t)
                     eq36(a,g),
                     eq37(a,g),
                     eq38(a,a,g),
