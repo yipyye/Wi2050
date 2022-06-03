@@ -211,37 +211,83 @@ variable util, ut(t), wage(e,t), nx(t),test;
 
 
 
-Equations
-
-eq1(a,g,t), eq2(g,t), eq3(a,g,t), eq4(a,a,t), eq5(t), eq6(a,g,t), eq7(t), eq8(t), eq9(t), eq10(t), eq11(t), eq12(t),
-eq13(t), eq14(t), eq15(a,a,g,t), eq16(a,a,g,t), eq17(a,g,t),
+Equations           eq1(a,g,t)          Student population by age and gender at t+1 is those who continued at t
+                    eq2(g,t)            All 6 year-olds enroll in elementary school when they turn 7
+                    eq3(a,g,t)          Population by age and gender at t+1 is those who survived at t
+                    eq4(a,a,t)          Fertility rate depends on local values for females with less than 12 yrs of education and depends on a mix of local values and high income country average fertility rate for those with more than 12 yrs of education
+                    eq5(t)              Expected births at time t after accounting for female education
+                    eq6(a,g,t)          Equalizes gender ratio at birth
+                    eq7(t)              Total population of age for primary school
+                    eq8(t)              Total population of age for lower secondary school
+                    eq9(t)              Total population of age for upper secondary school
+                    eq10(t)             Total population of age for tertiary school
+                    eq11(t)             Lower secondary school enrollment rate
+                    eq12(t)             Upper secondary school enrollment rate
+                    eq13(t)             Tertiary school enrollment rate
+                    eq14(t)             Total population in school (primary lower sec upper sec tertiary)
+                    eq15(a,a,g,t)       Total drop-outs from school at each age without double counting
+                    eq16(a,a,g,t)       Total workforce by age and gender at t+1 equals those already working at t plus new drop-outs
+                    eq17(a,g,t)         Age 12 working population equals 0    
 *eq18(a,t),
-eq19(a,t), eq20(t), eq21(t), eq22(t), eq19a(t), eq19b(t),eq19c(t),eq19d(t),eq19e(t),
-eq23(t), eq24(t), eq25(t), eq26(t), eq27(t), eq28(t), eq29(t), eq30(t), eq31(t), eq32(t), eq33(t),
-eq34(t),
-eq36(a,g), eq37(a,g), eq38(a,a,g), eq39(t), eq40(t), eq41(t), eq42(t), eq43(t), eq44(t), eq45(t), eq46(t),
-eq47(t),eq48(t),eq49(t),eq50, eq51(t), eq52(a,t), eq53(t),eq54(t),eq30a(t),eq55(t),eq56(t),eq57(t),eq21a(t),eq58(t),eq59(t), eq60(t),
-eq61(t),eq62(t),eq63(t),eq64(a,t),eq65(t), eq66(e,t), eq67(t),eq68(t),eq69(t), eq70(t),
-
-utilt(t), utility,  output(t), outputpc(t), ewage(e,t), labors(e,t), labormk(e,t),
-kstart(t), kfstart(t), kffstart(t), krestart(t), knext(t), kfnext(t), kffnext(t),
-krenext(t),kfend(t), energy(t), ffuel(t),
-*conlim(t),
-education(t), edugdp(t),
-dstart(t), tbalance(t), totdebt(t), debttogdp(t),
-*debtlimit(t),
-conend(t), consumetrpc(t),
-kend(t), kffend(t), kreend(t),ktotal(t), costk(t),costkre(t),costkff(t),costkf(t),
-health(t),govcost(t),hlgdp(t), pubadgdp(t),
-cinfgdp(t),
-poutlay(t), educationuc(t),healthuc(t),
-gdpsocial(t), gdptotal(t), gdppercap(t), capitals(t), capitaltot(t),
-*invfmin(t),
-invfrate(t);
-*taxmax(t),
-*marginalpk(t)
-;
-
+                    eq19(a,t),
+                    eq19a(t),
+                    eq19b(t),
+                    eq19c(t),
+                    eq19d(t),
+                    eq19e(t),
+                    eq20(t),
+                    eq21(t),
+                    eq21a(t),
+                    eq22(t),
+                    eq23(t),
+                    eq24(t),
+                    eq25(t),
+                    eq26(t),
+                    eq27(t),
+                    eq28(t),
+                    eq29(t),
+                    eq30(t),
+                    eq30a(t),
+                    eq31(t),
+                    eq32(t),
+                    eq33(t),
+                    eq34(t),
+                    eq36(a,g),
+                    eq37(a,g),
+                    eq38(a,a,g),
+                    eq39(t),
+                    eq40(t),
+                    eq41(t),
+                    eq42(t),
+                    eq43(t),
+                    eq44(t),
+                    eq45(t),
+                    eq46(t),
+                    eq47(t),
+                    eq48(t),
+                    eq49(t),
+                    eq50,
+                    eq51(t),
+                    eq52(a,t),
+                    eq53(t),
+                    eq54(t),
+                    eq55(t),
+                    eq56(t),
+                    eq57(t),
+                    eq58(t),
+                    eq59(t),
+                    eq60(t),
+                    eq61(t)             Total population of school age (7-22)
+                    eq62(t)             School enrollment rate
+                    eq63(t)             Expected brith rate equals expected births divided by total population at time t
+                    eq64(a,t)           Fertile female by age
+                    eq65(t)             Total fertility rate at time t equals the sum of fertility rates given years of education and age
+                    eq66(e,t),
+                    eq67(t),
+                    eq68(t),
+                    eq69(t),
+                    eq70(t)
+                    ;
 
 eq1(as+1,g,t+1)..  s(as+1,g,t+1) =e= cont(as,t)*s(as,g,t);
 eq2(g,t+1)..  s("7",g,t+1) =e= pop("6",g,t);
@@ -320,6 +366,26 @@ eq67(t).. lfeptot("ls",t) =e= lfep("nos",t)+lfep("ps",t)+lfep("ls",t);
 eq68(t).. lfeptot("us",t) =e= lfep("us",t);
 eq69(t).. lfeptot("ts",t) =e= lfep("ts",t);
 eq70(t).. lfp(t) =e= lf(t);
+
+Equations
+utilt(t), utility,  output(t), outputpc(t), ewage(e,t), labors(e,t), labormk(e,t),
+kstart(t), kfstart(t), kffstart(t), krestart(t), knext(t), kfnext(t), kffnext(t),
+krenext(t),kfend(t), energy(t), ffuel(t),
+*conlim(t),
+education(t), edugdp(t),
+dstart(t), tbalance(t), totdebt(t), debttogdp(t),
+*debtlimit(t),
+conend(t), consumetrpc(t),
+kend(t), kffend(t), kreend(t),ktotal(t), costk(t),costkre(t),costkff(t),costkf(t),
+health(t),govcost(t),hlgdp(t), pubadgdp(t),
+cinfgdp(t),
+poutlay(t), educationuc(t),healthuc(t),
+gdpsocial(t), gdptotal(t), gdppercap(t), capitals(t), capitaltot(t),
+*invfmin(t),
+invfrate(t);
+*taxmax(t),
+*marginalpk(t)
+;
 
 output(t)..           q(t) =e= tfp1*en(t)**ben*kf(t)**bkf*kq(t)**bk*prod(es,lfepq(es,t)**bleds(es));
 labormk(es,t)..          lfeptot(es,t) =e= lfepq(es,t) + lfeps(es,t);
