@@ -1,3 +1,5 @@
+*Define 2022 initial capital(k0), initial infrastructure capital(kf0), initial capital to produce fossil fuel energy(kff0), initial capital to produce renewable energy(kre0)
+*initial population for USA in million (populusa0,popus0), initial GDP per capita for USA in thousand dollar(gdppc0,gdppcus0), captial factor for USA ??efficiency??(kfactorusa) 
 scalar k0,kf0,kff0,kre0,populusa0,popus0,gdppc0,gdppcus0,kfactorusa;
 popus0 = 330;
 populusa0 = 330;
@@ -7,26 +9,32 @@ k0 = 55000*kfactorusa*(populusa0/popus0);
 kf0 = 22000*kfactorusa*(populusa0/popus0);
 kff0 = 1100*kfactorusa*(populusa0/popus0);
 kre0 = 110*kfactorusa*(populusa0/popus0);
-
+*Define the years 2022-2050 as well as the starting and ending year
 set t /2022*2050/
 tstart(t)
 tend(t);
+*Define start time as the first element in the time range
 tstart(t) = yes$(ord(t) eq 1);
+*Define end time as the last element in the time range
 tend(t) = yes$(ord(t) eq card(t));
 
-*set e is education: primary, p; lower secondary, ls; upper secondary, us; tertiary, t;
-
+*set e is education: no schooling, nos; primary, p; lower secondary, ls; upper secondary, us; tertiary, ts;
 set e /nos,ps,ls,us,ts/
+*set es is the set with education larger or equal to 3 yrs
 set es(e);
 es(e) = yes$(ord(e) ge 3);
+
+*Give another name (ea) to the previously declared set e
 alias(e,ea);
 
+*define g as gender
 set g /male,female/;
+*define survival rate(surv) and fertility rate(fer), male(m); female(f); high income countries(hic)
 set surv /musa,fusa,mhic,fhic/;
 set fer /usa,hic/;
 
-*Sectors: subsistence, agriculture, mining, construction, power, manufacturing
-* professional services (traded), real estate, non-traded services, traded services, education, health care, public administration
+*Sectors(sec): subsistence, agriculture(ag), mining(mine), construction(con), power(pow), manufacturing(man)
+*professional services (traded), real estate(re), non-traded services(sern), traded services(sert), education(ed), health care(heal), public administration(pub)
 *sect: tradable sectors
 *secn: nontradable sectors
 
