@@ -217,76 +217,76 @@ Equations           eq1(a,g,t)          Student population by age and gender at 
                     eq4(a,a,t)          Fertility rate depends on local values for females with less than 12 yrs of education and depends on a mix of local values and high income country average fertility rate for those with more than 12 yrs of education
                     eq5(t)              Expected births at time t after accounting for female education
                     eq6(a,g,t)          Equalizes gender ratio at birth
-                    eq7(t)              Total population of age for primary school
-                    eq8(t)              Total population of age for lower secondary school
-                    eq9(t)              Total population of age for upper secondary school
-                    eq10(t)             Total population of age for tertiary school
+                    eq7(t)              Total population enrolled in primary school (assuming 100% continuation)
+                    eq8(t)              Total population enrolled in lower secondary school
+                    eq9(t)              Total population enrolled in upper secondary school
+                    eq10(t)             Total population enrolled in tertiary school
                     eq11(t)             Lower secondary school enrollment rate
                     eq12(t)             Upper secondary school enrollment rate
                     eq13(t)             Tertiary school enrollment rate
                     eq14(t)             Total population in school (primary lower sec upper sec tertiary)
-                    eq15(a,a,g,t)       Total drop-outs from school at each age without double counting
+                    eq15(a,a,g,t)       Total drop-outs from school at each age (without double counting)
                     eq16(a,a,g,t)       Total eligible-for-work population by age and gender at t+1 equals those already working at t plus new drop-outs
-                    eq17(a,g,t)         Age 12 working population equals 0    
+                    eq17(a,g,t)         No one of age 12 is eligible for work
 *eq18(a,t),
                     eq19(a,t)           Total eligible-for-work population given a certain level of education attainment
-                    eq19a(t)            No one of age 1 should be eiligible for work
-                    eq19b(t)            No one of age 2 should be eiligible for work
-                    eq19c(t)            No one of age 3 should be eiligible for work
-                    eq19d(t)            No one of age 4 should be eiligible for work
-                    eq19e(t)            No one of age 5 should be eiligible for work
+                    eq19a(t)            No one of age 1 should be eligible for work
+                    eq19b(t)            No one of age 2 should be eligible for work
+                    eq19c(t)            No one of age 3 should be eligible for work
+                    eq19d(t)            No one of age 4 should be eligible for work
+                    eq19e(t)            No one of age 5 should be eligible for work
                     eq20(t)             Total labor force depends on labor force participation at each level of education attainment
-                    eq21a(t)            Labor force that did not complete primary school (assumes 100% labor force participation)
+                    eq21a(t)            Labor force that did not complete primary school (assumes 100% labor force participation here)
                     eq21(t)             Labor force that completed primary school but did not complete lower secondary school or higher
                     eq22(t)             Labor force that completed lower secondary school but did not complete upper secondary school or higher
                     eq23(t)             Labor force that completed upper secondary school but did not complete tertiary school
                     eq24(t)             Labor force that completed tertiary school
                     eq25(t)             Total population at time t
-                    eq26(t)             Enables "school" to track total population of age for primary school
-                    eq27(t)             Enables "school" to track total population of age for lower secondary school
-                    eq28(t)             Enables "school" to track total population of age for upper secondary school
-                    eq29(t)             Enables "school" to track total population of age for tertiary school
+                    eq26(t)             Enables "school" to track total primary school enrollment
+                    eq27(t)             Enables "school" to track total lower secondary school enrollment
+                    eq28(t)             Enables "school" to track total upper secondary school enrollment
+                    eq29(t)             Enables "school" to track total tertiary school enrollment
                     eq30a(t)            Enables "lfe" to track labor force that did not complete primary school
                     eq30(t)             Enables "lfe" to track labor force that completed primary school but did not complete lower secondary school or higher
                     eq31(t)             Enables "lfe" to track labor force that completed lower secondary school but did not complete upper secondary school or higher
                     eq32(t)             Enables "lfe" to track labor force that completed upper secondary school but did not complete tertiary school
                     eq33(t)             Enables "lfe" to track labor force that completed tertiary school
-                    eq34(t)
-                    eq36(a,g),
-                    eq37(a,g),
-                    eq38(a,a,g),
-                    eq39(t),
-                    eq40(t),
-                    eq41(t),
-                    eq42(t),
-                    eq43(t),
-                    eq44(t),
-                    eq45(t),
-                    eq46(t),
-                    eq47(t),
-                    eq48(t),
-                    eq49(t),
-                    eq50,
-                    eq51(t),
-                    eq52(a,t),
-                    eq53(t),
-                    eq54(t),
-                    eq55(t),
-                    eq56(t),
-                    eq57(t),
-                    eq58(t),
-                    eq59(t),
-                    eq60(t),
+                    eq34(t)             Share of total population in school at time t
+                    eq36(a,g)           Imports the 2022 student population by length of education and gender from baseline data
+                    eq37(a,g)           Imports the 2022 population by age and gender from baseline data
+                    eq38(a,a,g)         Imports the 2022 work-eligible population by age length of education and gender from baseline data
+                    eq39(t)             Primary school graduates can but do not have to receive further education
+                    eq40(t)             A student finishes lower secondary school once started
+                    eq41(t)             A student finishes lower secondary school once started
+                    eq42(t)             A student finishes upper secondary school once started
+                    eq43(t)             A student finishes upper secondary school once started
+                    eq44(t)             A student finishes tertiary school once started
+                    eq45(t)             A student finishes tertiary school once started
+                    eq46(t)             A student finishes tertiary school once started
+                    eq47(t)             Lower secondary school graduates can but do not have to receive further education
+                    eq48(t)             Upper secondary school graduates can but do not have to receive further education
+                    eq49(t)             Tertiary school graduates do not receive further education
+                    eq50                
+                    eq51(t)             Average years of schooling received by the country's work-eligible population
+                    eq52(a,t)           Labor measured in efficiency units by age (assuming each year of schooling makes a worker roughly 10% more efficient)
+                    eq53(t)             Total labor measured in efficiency units
+                    eq54(t)             Human capital equals average labor in efficiency units per worker
+                    eq55(t)             A student finishes primary school once started
+                    eq56(t)             A student finishes primary school once started
+                    eq57(t)             A student finishes primary school once started
+                    eq58(t)             A student finishes primary school once started
+                    eq59(t)             A student finishes primary school once started
+                    eq60(t)             All students of age 6 continues to receive education at age 7 (stricter condition by eq2)
                     eq61(t)             Total population of school age (7-22)
                     eq62(t)             School enrollment rate
                     eq63(t)             Expected brith rate equals expected births divided by total population at time t
                     eq64(a,t)           Fertile female by age
                     eq65(t)             Total fertility rate at time t equals the sum of fertility rates given years of education and age
-                    eq66(e,t),
-                    eq67(t),
-                    eq68(t),
-                    eq69(t),
-                    eq70(t)
+                    eq66(e,t)           Replicates labor force by education with "lfep"
+                    eq67(t)             Labor force that does not complete upper secondary education
+                    eq68(t)             Labor force that completed upper secondary school but did not complete tertiary school (eq23 eq32)
+                    eq69(t)             Labor force that completed tertiary school (eq24 eq33)
+                    eq70(t)             Replicates labor force with "lfp" (eq20)
                     ;
 
 eq1(as+1,g,t+1)..  s(as+1,g,t+1) =e= cont(as,t)*s(as,g,t);
@@ -319,7 +319,7 @@ eq19c(t).. eattain("3",t) =e= 0;
 eq19d(t).. eattain("4",t) =e= 0;
 eq19e(t).. eattain("5",t) =e= 0;
 eq20(t).. lf(t) =e= sum(as,pr(as)*eattain(as,t));
-eq21a(t).. noa(t) =e= sum(as$(ord(as) ge 1 and ord(as) le 5),eattain(as,t));
+eq21a(t).. noa(t) =e= sum(as$(ord(as) ge 1 and ord(as) le 5), eattain(as,t));
 eq21(t).. pa(t) =e= pr("12")*eattain("12",t) + pr("13")*eattain("13",t) + pr("14")*eattain("14",t) ;
 eq22(t)..  lsa(t) =e= pr("15")*eattain("15",t)+pr("16")*eattain("16",t)+pr("17")*eattain("17",t);
 eq23(t)..  upsa(t) =e= pr("18")*eattain("18",t)+pr("19")*eattain("19",t)+pr("20")*eattain("20",t)+pr("21")*eattain("21",t);
