@@ -369,60 +369,60 @@ eq70(t).. lfp(t) =e= lf(t);
 
 Equations           utilt(t)            Period utility at time t is the log of consumption per capita
                     utility             Total utility equals the discounted present value of period utilities (assuming no terminal growth beyond end of projection period)
-                    output(t),
-                    outputpc(t),
-                    ewage(e,t),
-                    labors(e,t),
-                    labormk(e,t),
-                    kstart(t),
-                    kfstart(t),
-                    kffstart(t),
-                    krestart(t),
-                    knext(t),
-                    kfnext(t),
-                    kffnext(t),
-                    krenext(t),
-                    kfend(t),
-                    energy(t),
-                    ffuel(t),
+                    output(t)           Output is computed with a standard Cobb-Douglas production equation involving energy assets
+                    outputpc(t)         Output per capita using total population
+                    ewage(e,t)          Wage increases in worker productivity (increasing in education) and total output - decreases in the number of output production workers
+                    labors(e,t)         Societal need for education and healthcare workers scales linearly with student count and population
+                    labormk(e,t)        Labor market clearing condition by length of education: either produce outputs or provide social services to others (education and healthcare workers)
+                    kstart(t)           Initial capital stock for output production and social services (education and healthcare)
+                    kfstart(t)          Initial infrastructure capital stock
+                    kffstart(t)         Initial fossil fuel capital stock
+                    krestart(t)         Initial renewable energy capital stock
+                    knext(t)            Law of motion for output-producing and social service capital stock
+                    kfnext(t)           Law of motion for infrastructure capital stock
+                    kffnext(t)          Law of motion for fossil fuel capital stock
+                    krenext(t)          Law of motion for renewable energy capital stock
+                    kfend(t)            Terminal year depreciation equals investment for infrastructure capital stock
+                    energy(t)           Total energy assets (fossil fuel and renewable)
+                    ffuel(t)            Ongoing cost of fossil fuel generation
 *conlim(t),
-                    education(t),
-                    edugdp(t),
-                    dstart(t),
-                    tbalance(t),
-                    totdebt(t),
-                    debttogdp(t),
+                    education(t)        Cost of education (assumes wages are the same for a output-producing worker and a teacher as long as they have the same level of education)
+                    edugdp(t)           Cost of education as a percent of total GDP
+                    dstart(t)           Initial debt on the country assumed to be 0
+                    tbalance(t)         Trade surplus is output net of private consumption \ various investments \ government spending \ and fossil fuel costs
+                    totdebt(t)          Debt balance at t+1 equals debt balance at t with interest minus trade surplus
+                    debttogdp(t)        Debt balance as a percent of output
 *debtlimit(t),
-                    conend(t),
-                    consumetrpc(t),
-                    kend(t),
-                    kffend(t),
-                    kreend(t),
-                    ktotal(t),
-                    costk(t),
-                    costkre(t),
-                    costkff(t),
-                    costkf(t),
-                    health(t),
-                    govcost(t),
-                    hlgdp(t),
-                    pubadgdp(t),
-                    cinfgdp(t),
-                    poutlay(t),
-                    educationuc(t),
-                    healthuc(t),
-                    gdpsocial(t),
-                    gdptotal(t),
-                    gdppercap(t),
-                    capitals(t),
-                    capitaltot(t),
+                    conend(t)           Last period consumption equals output net of various investments \ interest on national debt \ government spending \ and fossil fuel costs
+                    consumetrpc(t)      Consumption of tradable goods per capita
+                    kend(t)             Terminal year depreciation equals investment for output-producing and social service capital stock
+                    kffend(t)           Terminal year depreciation equals investment for fossil fuel capital stock
+                    kreend(t)           Terminal year depreciation equals investment for renewable energy capital stock
+                    ktotal(t)           Total capital stock in the economy
+                    costk(t)            Total cost of investment in output-producing and social service capital stock (unit cost increases linearly in growth rate)
+                    costkre(t)          Total cost of investment in renewable energy capital stock
+                    costkff(t)          Total cost of investment in fossil fuel capital stock
+                    costkf(t)           Total cost of investment in infrastructure capital stock
+                    health(t)           Cost of healthcare (assumes wages are the same for a output-producing worker and a healthcare worker as long as they have the same level of education)
+                    govcost(t)          Government spending (assumed to be 0% of output each year)
+                    hlgdp(t)            Cost of healthcare as a percent of total GDP
+                    pubadgdp(t)         Cost of public administration as a percent of total GDP
+                    cinfgdp(t)          Cost of investment in infrastructure as a percent of total GDP
+                    poutlay(t)          Percent of GDP spent on education \ healthcare \ public administration \ infrastructure
+                    educationuc(t)      Cost of education per unit of consumption by the students
+                    healthuc(t)         Cost of healthcare per unit of consumption by the total population
+                    gdpsocial(t)        Social service component of GDP
+                    gdptotal(t)         Total GDP (output and social services)
+                    gdppercap(t)        GDP per capita
+                    capitals(t)         Social service capital stock
+                    capitaltot(t)       Capital stock for output production and social services (education and healthcare)
 *invfmin(t),
-                    invfrate(t)
+                    invfrate(t)         Growth rate of infrastructure capital (gross of depreciation)
                     ;
 *taxmax(t),
 *marginalpk(t);
 
-output(t)..           q(t) =e= tfp1*en(t)**ben*kf(t)**bkf*kq(t)**bk*prod(es,lfepq(es,t)**bleds(es));
+output(t)..           q(t) =e= tfp1*en(t)**ben*kf(t)**bkf*kq(t)**bk*prod(es,lfepq(es,t)**bleds(es)); 
 labormk(es,t)..          lfeptot(es,t) =e= lfepq(es,t) + lfeps(es,t);
 labors(es,t)..         lfeps(es,t) =e= lfed(es)*schooltot(t) + lfhl(es)*poptot(t);
 *capitals(t)..          ks(t) =e= 0*ked*schooltot(t) + khl*poptot(t);
@@ -498,25 +498,26 @@ schoolage.lo(t) = 001;
 fbyage.lo(a,t) = .001;
 lfepq.lo(e,t) = .001;
 
-parameter debtqlim;
+parameter           debtqlim            Upper limit of debt to GDP ratio
+                    ;
 
 debtqlim = 10;
 
-parameter dlim(scen)
+parameter           dlim(scen)          Upper limit of debt to GDP ratio by scenario
 
 /low   10
  high 10/;
 
-parameter rs(scen)
+parameter           rs(scen)            
 
 /low 0.05
 high 0.05/;
 
-parameter taxmaxs(scen)
+parameter           taxmaxs(scen)
 /low  0.1
 high 0.4/;
 
-parameter fertshs
+parameter           fertshs             Weight on high-income country fertility rate for females with more than 12 years of education
 /low .5
  high .5/;
 
