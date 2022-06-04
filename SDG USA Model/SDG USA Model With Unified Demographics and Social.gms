@@ -367,25 +367,60 @@ eq68(t).. lfeptot("us",t) =e= lfep("us",t);
 eq69(t).. lfeptot("ts",t) =e= lfep("ts",t);
 eq70(t).. lfp(t) =e= lf(t);
 
-Equations
-utilt(t), utility,  output(t), outputpc(t), ewage(e,t), labors(e,t), labormk(e,t),
-kstart(t), kfstart(t), kffstart(t), krestart(t), knext(t), kfnext(t), kffnext(t),
-krenext(t),kfend(t), energy(t), ffuel(t),
+Equations           utilt(t)            Period utility at time t is the log of consumption per capita
+                    utility             Total utility equals the discounted present value of period utilities (assuming no terminal growth beyond end of projection period)
+                    output(t),
+                    outputpc(t),
+                    ewage(e,t),
+                    labors(e,t),
+                    labormk(e,t),
+                    kstart(t),
+                    kfstart(t),
+                    kffstart(t),
+                    krestart(t),
+                    knext(t),
+                    kfnext(t),
+                    kffnext(t),
+                    krenext(t),
+                    kfend(t),
+                    energy(t),
+                    ffuel(t),
 *conlim(t),
-education(t), edugdp(t),
-dstart(t), tbalance(t), totdebt(t), debttogdp(t),
+                    education(t),
+                    edugdp(t),
+                    dstart(t),
+                    tbalance(t),
+                    totdebt(t),
+                    debttogdp(t),
 *debtlimit(t),
-conend(t), consumetrpc(t),
-kend(t), kffend(t), kreend(t),ktotal(t), costk(t),costkre(t),costkff(t),costkf(t),
-health(t),govcost(t),hlgdp(t), pubadgdp(t),
-cinfgdp(t),
-poutlay(t), educationuc(t),healthuc(t),
-gdpsocial(t), gdptotal(t), gdppercap(t), capitals(t), capitaltot(t),
+                    conend(t),
+                    consumetrpc(t),
+                    kend(t),
+                    kffend(t),
+                    kreend(t),
+                    ktotal(t),
+                    costk(t),
+                    costkre(t),
+                    costkff(t),
+                    costkf(t),
+                    health(t),
+                    govcost(t),
+                    hlgdp(t),
+                    pubadgdp(t),
+                    cinfgdp(t),
+                    poutlay(t),
+                    educationuc(t),
+                    healthuc(t),
+                    gdpsocial(t),
+                    gdptotal(t),
+                    gdppercap(t),
+                    capitals(t),
+                    capitaltot(t),
 *invfmin(t),
-invfrate(t);
+                    invfrate(t)
+                    ;
 *taxmax(t),
-*marginalpk(t)
-;
+*marginalpk(t);
 
 output(t)..           q(t) =e= tfp1*en(t)**ben*kf(t)**bkf*kq(t)**bk*prod(es,lfepq(es,t)**bleds(es));
 labormk(es,t)..          lfeptot(es,t) =e= lfepq(es,t) + lfeps(es,t);
@@ -441,7 +476,7 @@ cinfgdp(t)..          cinvfgdp(t) =e= cinvf(t)/gdpt(t);
 utilt(t)..            ut(t) =e= log(conpc(t));
 utility..             util =e= sum(t,disc(t)* ut(t)) + (1/r)*sum(tend,disc(tend)*ut(tend));
 
-model sdgfinance using /all/;
+Model sdgfinance using /all/;
 
 poptot.lo(t) = .00001;
 en.lo(t) = .001;
