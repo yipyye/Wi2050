@@ -94,7 +94,7 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            edcostgdps(scen,t)    Education cost as a ratio to gdp
            invs(scen,t)          Investment
            schoolshs(scen,t)     Share of population in school
-           schoolyrs(scen,t)     Schooling years(?)
+           schoolyrs(scen,t)     Schooling years
            tfrts(scen,t)         (?)
            tfrs(scen,t)          Total fertility rate
            poptots(scen,t)       Total population
@@ -293,7 +293,7 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       gdpt(t)               Total GDP(? same as gdptot?)
                       gdptpc(t)             GDP Total per capita(? same as gdppc?)
                       emp(t)                Employment as a function of sector and year
-                      hc(t)                 Housing consumption(?)
+                      hc(t)                 Human capital
                       k(t)                  Business capital as a function of year
                       kq(t)                 Capital stock for output production
                       ks(t)                 Capital stock for social services (education and healthcare)
