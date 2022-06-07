@@ -129,7 +129,7 @@ bleds("ts") = blab*(bledr("ts"));
 
 *Demand for capital stock??why??(ek); Cost of fossil fuel generation(costff); Cost of renewable energy generation(costre); Depreciation(dep);
 *Interest rate(r); Percentage of fossil fuel capital required as input to produce energy(aff); Tax limit(taxlim); Production of mining sector in 2022 at time 0(min0);
-*Production of land in 2022 at time 0(land0); Total factor productivity at time 1??(tfp1); ??group of phis?? fossil fuel(phiff),  renewable energy(phire), infrastructure(phif), (phi)
+*Production of land in 2022 at time 0(land0); Total factor productivity at time 1??(tfp1); unit cost of investment increases with growth rate of fossil fuel(phiff), unit cost of investment increases with growth rate of renewable energy(phire), unit cost of investment increases with growth rate of infrastructure(phif), unit cost of investment increases with growth rate(phi)
 *output per capita in 2022 at time 0(qpc0)
 
 scalar ek, costff, costre, dep, r, aff, taxlim, min0, land0, tfp1, phiff, phire, phif, phi, qpc0;
