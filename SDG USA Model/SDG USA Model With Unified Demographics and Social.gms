@@ -278,31 +278,7 @@ parameter years(e)
  us 12
  ts 16/;
 
-*define positive variables: lfe(e,t) Labor force as a function of education and year(!! appear twice), schoolsh(t) Total school population share as a function of year,
-*schooltsa(t) School age as a function of year(!! appear twice), q(t) output, qpc(t) output per capita, gdp(t) GDP,gdps(t) Social service component of GDP, gdppc(t) GDP per capita, 
-*gdpt(t) Total GDP (output and social services)(??difference with gdptot), gdptpc(t) GDP total per capita, emp(t) Employment as a function of sector and year, hc(t)(??housing consumption??),
-*k(t) business capital as a function of year,kq(t) Capital stock for output production, ks(t) Capital stock for social services (education and healthcare), con(t) consumption, tx(t) taxes, conpc(t) consumption per capita,
-*land(t) land ,min(t) mining, edcost(t) education cost(!! appear twice), edcostgdp(t) edu cost as ratio to GDP, ktot(t) total capital(!! appear twice), qpc(t) output per capita,
-*efflabor(a,t) Labor measured in efficiency units by age, efflabtot(t) Total labor measured in efficiency units,scgdp(t)??, kff(t) Capital stock for fossil fuel energy production by year,
-*kre(t) Capital stock for renewable energy production by year, he(t)??, en(t) Energy, entot(t) Total energy, enh(t) Housing energy,
-*enhpc(t) Housing energy per capita, invff(t) Investment in fossil fuels, invre(t) Investment in renewable energy, ff(t) Fossil fuels, 
-*invf(t) Investment for capital infrastructure, kh(t) Capital for housing, invh(t) Investment in housing, hspc(t) Housing per capita, 
-*kf(t) Infrastructure capital, lqp(t)??,lsub(t)??, gov(t) Government expenditure, gdptot(t) total GDP??, pn(t) Price of non-tradeables, 
-*debt(t) Debt level, debtgdp(t) Debt-GDP ratio, cont12(t)??, govgdp(t) Government expenditure as % of GDP, reserve(t) Reserve levels, 
-*hlcost(t) health cost, control(t)??, healthpc(t) health per capita??, hlcostgdp(t) health cost-GDP ratio,
-*schoolpop(t) Total school population, cont(a,t) Continuation rate, s(a,g,t) Schooling as a function of age gender and year, 
-*leave(a,a,g,t) School dropout rate as a function of two age elements gender and year, neet(a,a,t) Not in education employment or training, 
-*school(e,t) School enrollment at level, schooltot(t) Total school enrollment, schoolc(t) School completion, ps(t) Primary school,
-*ls(t) Lower secondary, us(t) Upper secondary,ts(t) Tertiary,lse(t) Lower secondary enrollment, use(t) Upper secondary enrollment, tse(t) Tertiary enrollment,
-*eattain(a,t) Educational attainment, w(a,a,g,t) Working population, worka(a,t) Working age, pop(a,g,t) Age and gender-specific population, poptot(t) Total population,
-*noa(t) Labor force that did not complete primary school, pa(t) Primary attainment, lsa(t) Lower secondary attainment, upsa(t) Upper secondary attainment, tsa(t) Tertiary attainment, lf(t) Total labor force,
-*h(t) Housing, birth(t) Birth rate, fert(a,a,t) Fertility, inv(t) Investment, schoolyr(t) scooling years, cinv(t) cost of investment,
-*cinvff(t) cost of investment in Fossil fuels, cinvf(t) cost of investment in infrastructure, cinvre(t) cost of investment in renewable energy, debt(t) debt, debtgdp(t) debt-GDP ratio, 
-*schoolage(t) schooling age, enrollrate(t) enrollment rate, birthrate(t) birthrate, fbyage(a,t) Fertile female by age,tfr(t) Total fertility rate, cinvfgdp(t) cost of investment in infrastructure-GDP ratio,
-*pubgdp(t) Cost of public administration as a percent of total GDP,outlaygdp(t) Percent of GDP spent on education\healthcare\public administration\infrastructure, 
-*edunitcost(t) Cost of education per unit of consumption by the students, hlunitcost(t)  Cost of healthcare per unit of consumption by the total population, gcost(t) Government spending,
-*invfr(t) Growth rate of infrastructure capital, lfep(e,t)  labor force participation??, lfeptot(e,t) total labor force participation, lfepq(e,t) labor force participation in output production,
-*lfeps(e,t) labor force participation in social services, lfp(t) total labor force participation ??;
+
 
 
 
