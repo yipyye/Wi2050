@@ -93,7 +93,6 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            invs(scen,t)          Investment
            schoolshs(scen,t)     Share of population in school
            schoolyrs(scen,t)     Schooling years
-           tfrts(scen,t)         ?
            tfrs(scen,t)          Total fertility rate
            poptots(scen,t)       Total population
            edcosts(scen,t)       Education cost
@@ -304,10 +303,8 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       ktot(t)               Total capital stock
                       efflabor(a,t)         Labor measured in efficiency units by age           
                       efflabtot(t)          Total labor measured in efficiency units           
-                      scgdp(t)              ?
                       kff(t)                Capital stock for fossil fuel energy production by year
                       kre(t)                Capital stock for renewable energy production by year
-                      he(t)                 ?
                       en(t)                 Energy
                       entot(t)              Total energy
                       enh(t)                Housing energy
@@ -320,18 +317,14 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       invh(t)               Investment in housing
                       hspc(t)               Housing per capita           
                       kf(t)                 Infrastructure capital
-                      lqp(t)                ?
-                      lsub(t)               ?
                       gov(t)                Government expenditure
                       gdptot(t)             Total GDP(? same as gdpt?)
                       pn(t)                 Price of non-tradeables
                       debt(t)               Debt level
                       debtgdp(t)            Debt-GDP ratio
-                      cont12(t)             ?
                       govgdp(t)             Government expenditure as % of GDP
                       reserve(t)            Reserve levels
                       hlcost(t)             Health cost
-                      control(t)            ?
                       healthpc(t)           Health per capita           
                       hlcostgdp(t)          Health cost-GDP ratio       
                       schoolpop(t)          Total school population                   
