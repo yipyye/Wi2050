@@ -86,8 +86,6 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            kfs(scen,t)           Infrastructure capital stock
            wages(scen,e,t)       Wages by education level
            ktots(scen,t)         Total capital stock
-           mpks(scen,t)          Marginal product of capital
-           conpcs(scen,t)        Consumption per capita(2)
            qs(scen,t)            Output
            qpcs(scen,t)          Output per capita
            kaps(scen,t)          Business capital stock i.e. plant and equipmen
@@ -100,10 +98,9 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            poptots(scen,t)       Total population
            edcosts(scen,t)       Education cost
            enrollrates(scen,t)   School enrollment rate
-           schoolshs(scen,t)     Share of population in school(2)
            birthrates(scen,t)    Birth rate
            fertshs(scen)         Fertility share
-           mpks(scen,t)          Marginal product of capital(2)
+           mpks(scen,t)          Marginal product of capital
            mpkfs(scen,t)         Marginal product of infrastructure capital
            mpens(scen,t)         Marginal product of energy capital
            cinvfshgdps(scen,t)   Cost of investment in infrastructure to GDP ratio
@@ -305,7 +302,6 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       edcost(t)             Education cost
                       edcostgdp(t)          Edu cost as ratio to GDP           
                       ktot(t)               Total capital stock
-                      qpc(t)                Output per capita(2)
                       efflabor(a,t)         Labor measured in efficiency units by age           
                       efflabtot(t)          Total labor measured in efficiency units           
                       scgdp(t)              ?
@@ -324,7 +320,6 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       invh(t)               Investment in housing
                       hspc(t)               Housing per capita           
                       kf(t)                 Infrastructure capital
-                      ktot(t)               Total capital stock(2)
                       lqp(t)                ?
                       lsub(t)               ?
                       gov(t)                Government expenditure
@@ -335,14 +330,11 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       cont12(t)             ?
                       govgdp(t)             Government expenditure as % of GDP
                       reserve(t)            Reserve levels
-                      edcost(t)             Education cost(2)
                       hlcost(t)             Health cost
                       control(t)            ?
                       healthpc(t)           Health per capita           
                       hlcostgdp(t)          Health cost-GDP ratio       
-                      lfe(e,t)              Labor force as a function of education and year(2)
-                      schoolpop(t)          Total school population           
-                      schooltsa(t)          School age as a function of year(2)           
+                      schoolpop(t)          Total school population                   
                       cont(a,t)             Continuation rate
                       s(a,g,t)              Schooling as a function of age gender and year
                       leave(a,a,g,t)        School dropout rate as a function of two age elements gender and year           
