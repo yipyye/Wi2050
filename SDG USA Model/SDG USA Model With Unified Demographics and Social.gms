@@ -95,7 +95,7 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            invs(scen,t)          Investment
            schoolshs(scen,t)     Share of population in school
            schoolyrs(scen,t)     Schooling years
-           tfrts(scen,t)         (?)
+           tfrts(scen,t)         ?
            tfrs(scen,t)          Total fertility rate
            poptots(scen,t)       Total population
            edcosts(scen,t)       Education cost
