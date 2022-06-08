@@ -6,7 +6,8 @@ scalar     k0         2022 initial capital
            popus0     initial population for USA in million 
            gdppc0     initial GDP per capita for USA in thousand dollar
            gdppcus0   initial GDP per capita for USA in thousand dollar
-           kfactorusa captial factor for USA (efficiency?);
+           kfactorusa captial factor for USA (efficiency?)
+           ;
            
 popus0 = 330;
 populusa0 = 330;
@@ -103,14 +104,13 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            mpkfs(scen,t)         Marginal product of infrastructure capital
            mpens(scen,t)         Marginal product of energy capital
            cinvfshgdps(scen,t)   Cost of investment in infrastructure to GDP ratio
-           invfshgdps(scen,t)    Investment in infrastructure to GDP ratio;
-
+           invfshgdps(scen,t)    Investment in infrastructure to GDP ratio
+           ;
 
 $offOrder
 
 *Production function coefficients on labor by sector and education(bed)
 parameter bed(sec,e);
-
 
 
 *bk coefficient on business capital stock (plant and equipment) in the production function
@@ -124,7 +124,6 @@ bkf = .10;
 *ben coefficient on power in the production function
 parameter ben;
 ben = .05;
-
 
 
 *Coeff. on labor is remainder after subtract share for business capital, infra, and energy(blab)
@@ -163,7 +162,8 @@ scalar     ek         Demand for capital stock(?)
            phire      Unit cost of investment increases with growth rate of renewable energy
            phif       Unit cost of investment increases with growth rate of infrastructure
            phi        Unit cost of investment increases with growth rate
-           qpc0       Output per capita in 2022 at time 0;               
+           qpc0       Output per capita in 2022 at time 0
+           ;               
            
                   
 qpc0 = 58.543;
@@ -197,7 +197,8 @@ parameter  popg0(a,g)            Initial population by age and gender
            w0(a,a,g)             Initial working age population by age and gender
            s0(a,g)               Initial school achievement by age and gender
            ferthic0(a,fer)       Initial high-income country fertility by age
-           tfp(sec)              Total factor productivity by sector;
+           tfp(sec)              Total factor productivity by sector
+           ;
 
 *read in data
 $CALL GDXXRW usadatainput.xlsx Index=Index!a1 trace=3
@@ -380,7 +381,8 @@ positive variables    lfe(e,t)              Labor force as a function of educati
                       lfeptot(e,t)          Total labor force participation(?)           
                       lfepq(e,t)            Labor force participation in output production
                       lfeps(e,t)            Labor force participation in social services
-                      lfp(t)                Total labor force participation(?same as lfeptot?);               
+                      lfp(t)                Total labor force participation(?same as lfeptot?)
+                      ;               
            
 *Main utility variable(util); Utility by year(ut); wage(wage); Net exports(nx)
 variable util, ut(t), wage(e,t), nx(t),test;
@@ -684,12 +686,12 @@ parameter           dlim(scen)          Upper limit of debt to GDP ratio by scen
 /low   10
  high 10/;
 
-parameter           rs(scen)            
+parameter           rs(scen)            Interest rate by scenario
 
 /low 0.05
 high 0.05/;
 
-parameter           taxmaxs(scen)
+parameter           taxmaxs(scen)       Taxation limit by scenario
 /low  0.1
 high 0.4/;
 
