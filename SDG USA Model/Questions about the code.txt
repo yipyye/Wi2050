@@ -3,16 +3,16 @@ Version: June 7th
 
 ****Questions about variables****
 1.  #9 kfactorusa      is it index the efficiency of USA?
-2.  #98 tfrts(scen,t)  is it Total fertility rate (same as tfrs)? (only appear once)
+2.  #98 tfrts(scen,t)  is it Total fertility rate (same as tfrs)? (only appear once) [deleted]
 3.  #156 ek            is it demand for capital stock(from previous commented version), why?
 4.  #165 tfp1          is it Total factor productivity at time 1?
 5.  #293 gdpt(t)       is it Total GDP(?same as gdptot?)
 6.  #294 gdptpc(t)     is it GDP Total per capita(? same as gdppc?)
-7.  #311 scgdp(t)      what is it? (only appear once)
-8.  #314 he(t)         what is it? (only appear once)
-9.  #328 lqp(t)        what is it? (only appear once)  
-10. #329 lsub(t)       what is it? (only appear once)
-11. #335 cont12(t)     what is it? (only appear once)
-12. #340 control(t)    what is it? (related to eq50)
+7.  #311 scgdp(t)      what is it? (only appear once) [deleted]
+8.  #314 he(t)         what is it? (only appear once) [deleted]
+9.  #328 lqp(t)        what is it? (only appear once) [deleted] 
+10. #329 lsub(t)       what is it? (only appear once) [deleted]
+11. #335 cont12(t)     what is it? (only appear once) [deleted]
+12. #340 control(t)    what is it? (related to eq50)  [deleted]
 13. #394 lfep(e,t)     is it Labor force participation(what's the relationship between lfeptot(e,t), lfp(t))
  
