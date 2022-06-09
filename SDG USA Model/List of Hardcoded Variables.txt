@@ -1,1 +1,5 @@
-text here
+School continuation rate from age 6 to 22
+Minimum working age
+govcost(t).. Government cost as a percent of output
+capitals(t).. Social service capital stock as a percentage of present value of social service GDP
+pubadgdp(t).. Cost of public administration as a percent of total GDP
