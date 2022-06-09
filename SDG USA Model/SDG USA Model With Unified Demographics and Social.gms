@@ -13,7 +13,7 @@ scalar     k0         2022 initial capital
            popus0     initial population for USA in million 
            gdppc0     initial GDP per capita for USA in thousand dollar
            gdppcus0   initial GDP per capita for USA in thousand dollar
-           kfactorusa captial factor for USA (efficiency?)
+           kfactorusa captial factor for USA
            ;
            
 popus0 = 330;
