@@ -3,3 +3,37 @@ Minimum working age
 govcost(t).. Government cost as a percent of output
 capitals(t).. Social service capital stock as a percentage of present value of social service GDP
 pubadgdp(t).. Cost of public administration as a percent of total GDP
+k0         2022 initial capital
+kf0        initial infrastructure capital
+kff0       initial capital to produce fossil fuel energy
+kre0       initial capital to produce renewable energy
+populusa0  initial population for USA in million 
+popus0     initial population for USA in million 
+gdppc0     initial GDP per capita for USA in thousand dollar
+gdppcus0   initial GDP per capita for USA in thousand dollar
+kfactorusa captial factor for USA (efficiency?)
+bk coefficient on business capital stock (plant and equipment) in the production function
+bkf coefficient on infrastructure capital in the production function
+ben coefficient on power in the production function
+bledr(e) Coeff. on labor by education level
+ek         Demand for capital stock(?)
+costff     Cost of fossil fuel generation
+costre     Cost of renewable energy generation
+dep        Depreciation
+r          Interest rate
+aff        Percentage of fossil fuel capital required as input to produce energy
+taxlim     Tax limit
+min0       Production of mining sector in 2022 at time 0
+land0      Production of land in 2022 at time 0
+tfp1       Total factor productivity at time 1(?)
+phiff      Unit cost of investment increases with growth rate of fossil fuel
+phire      Unit cost of investment increases with growth rate of renewable energy
+phif       Unit cost of investment increases with growth rate of infrastructure
+phi        Unit cost of investment increases with growth rate
+qpc0       Output per capita in 2022 at time 0
+pr(a)      Labor force participation rate by years of schooling
+lfed(e)    labor force in education
+lfhl(e)    labor force in health
+ked, khl   capital stock in education; capital stock in health
+years(e)   years corresponding to education level
+
