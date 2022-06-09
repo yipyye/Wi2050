@@ -15,4 +15,5 @@ Version: June 7th
 11. #335 cont12(t)     what is it? (only appear once) [deleted]
 12. #340 control(t)    what is it? (related to eq50)  [deleted]
 13. #394 lfep(e,t)     is it Labor force participation(what's the relationship between lfeptot(e,t), lfp(t))
+14. #236 poptotp(t),schooltotp(t) (only appear once) [deleted]
  
