@@ -1,3 +1,10 @@
+**************************************
+*  The World in 2050:  SDG USA Model *
+*  Commented Version 1, June 8 2022  *
+**************************************
+
+**Initial Values**
+
 scalar     k0         2022 initial capital
            kf0        initial infrastructure capital
            kff0       initial capital to produce fossil fuel energy
@@ -6,7 +13,7 @@ scalar     k0         2022 initial capital
            popus0     initial population for USA in million 
            gdppc0     initial GDP per capita for USA in thousand dollar
            gdppcus0   initial GDP per capita for USA in thousand dollar
-           kfactorusa captial factor for USA (efficiency?)
+           kfactorusa captial factor for USA
            ;
            
 popus0 = 330;
@@ -18,7 +25,7 @@ kf0 = 22000*kfactorusa*(populusa0/popus0);
 kff0 = 1100*kfactorusa*(populusa0/popus0);
 kre0 = 110*kfactorusa*(populusa0/popus0);
 
-*Define the years 2022-2050 as well as the starting and ending year
+**Define the years 2022-2050 as well as the starting and ending year**
 set t /2022*2050/
 tstart(t)
 tend(t);
@@ -29,7 +36,7 @@ tstart(t) = yes$(ord(t) eq 1);
 *Define end time as the last element in the time range
 tend(t) = yes$(ord(t) eq card(t));
 
-*set e is education: no schooling, nos; primary, p; lower secondary, ls; upper secondary, us; tertiary, ts;
+**Education(e): no schooling, nos; primary, p; lower secondary, ls; upper secondary, us; tertiary, ts**
 set e /nos,ps,ls,us,ts/
 *set es is the set with education larger or equal to 3 yrs
 set es(e);
@@ -38,13 +45,14 @@ es(e) = yes$(ord(e) ge 3);
 *Give another name (ea) to the previously declared set e
 alias(e,ea);
 
-*define g as gender
+**Gender(g)**
 set g /male,female/;
-*define survival rate(surv) and fertility rate(fer), male(m); female(f); high income countries(hic)
+
+**Survival rate(surv) and Fertility rate(fer), male(m); female(f); high income countries(hic)**
 set surv /musa,fusa,mhic,fhic/;
 set fer /usa,hic/;
 
-*Sectors(sec): subsistence, agriculture(ag), mining(mine), construction(con), power(pow), manufacturing(man)
+**Sectors(sec): subsistence, agriculture(ag), mining(mine), construction(con), power(pow), manufacturing(man)**
 *professional services (traded), real estate(re), non-traded services(sern), traded services(sert), education(ed), health care(heal), public administration(pub)
 *sect: tradable sectors
 *secn: nontradable sectors
@@ -53,7 +61,7 @@ set sec /ag, mine, con, pow, man, re, sern, sert, ed, heal, pub/
 sect(sec) /ag, mine, man, sert/
 secn(sec) /con, pow, re, sern, ed, heal, pub/;
 
-*sets and subsets for age
+**sets and subsets for Age**
 *define age 1 for births(a1); subset for working age ranges from 12 to 65(aw); subset for ages in the fertility range from 20 to 49(af2049);
 *Primary age(ap); Lower secondary age(als); Fertile age between 15 and 49(af); Upper secondary age(aus); Tertiary age(ater); School age between 6 and 23(as)
 *age 6 group(an); age 7 to 22 group(asc); age 16 to 100(ad)
@@ -76,10 +84,10 @@ ad(a) = yes$(ord(a) ge 16);
 *Give another name (aa) to the previously declared set as
 alias(as,aa);
 
-*Define scenarios for low and high cases 
+**Define scenarios for low and high cases** 
 set scen /low , high/;
 
-*Define parameters(all by scenario and year)
+**Define parameters(all by scenario and year)**
 parameter  debtgdps(scen,t)      Debt to GDP ratio
            conpcs(scen,t)        Consumption per capita
            kffs(scen,t)          Capital stock to produce energy with fossil fuels
@@ -108,6 +116,8 @@ parameter  debtgdps(scen,t)      Debt to GDP ratio
            ;
 
 $offOrder
+
+**Production function coefficients**
 
 *Production function coefficients on labor by sector and education(bed)
 parameter bed(sec,e);
@@ -141,13 +151,14 @@ ts  .6 /;
 
 parameter bled(e),bleds(e);
 
-*Coeff. on labor times coefficient on labor by education?? 
+*Coeff. on labor times coefficient on labor by education(?) 
 bled(e) = blab*bledr(e);
 bleds("ls") = blab*(bledr("nos")+bledr("ps")+bledr("ls"));
 bleds("us") = blab*(bledr("us"));
 bleds("ts") = blab*(bledr("ts"));
 
 
+**Define some hardcoded variables**
 scalar     ek         Demand for capital stock(?)
            costff     Cost of fossil fuel generation
            costre     Cost of renewable energy generation
@@ -183,14 +194,14 @@ phire = 0;
 phif = 0;
 phi = 0;
 
-*Discount factor defined by interest rate and target year;
+**Discount factor defined by interest rate and target year**
 parameter disc(t);
 disc(t) = 1/(1+r)**(ord(t)-1);
 
-*Define maximum debt to GDP ratio
+**Define maximum debt to GDP ratio**
 parameter debtqlim;
 
-
+**Some initial variables**
 parameter  popg0(a,g)            Initial population by age and gender
            fert0(a,fer)          Initial fertility by age
            surv0(a,surv)         Initial survival rates by age
@@ -222,11 +233,9 @@ parameter survivehi0(a,g);
 survivehi0(a,"female") = surv0(a,"fhic");
 survivehi0(a,"male") = surv0(a,"mhic");
 
-*total population and total population in school (not appear in anywhere else)
-parameter poptotp(t),schooltotp(t);
 
-*Labor force participation rate by years of schooling
 
+**Labor force participation rate by years of schooling**
 parameter pr(a)
 /6  .45
  7  .45
@@ -248,6 +257,7 @@ parameter pr(a)
 
 scalar fertsh;
 
+**Labor force**
 *labor force in education
 parameter lfed(e)
 
@@ -262,6 +272,7 @@ parameter lfhl(e)
  us   0.03
  ts   0.01/;
 
+**Capital Stock**
 *capital stock in education; capital stock in health
 scalar ked, khl;
 ked = 1;
