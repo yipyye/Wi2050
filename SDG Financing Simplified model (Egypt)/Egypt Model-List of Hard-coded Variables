@@ -1,0 +1,48 @@
+kff0=10       initial capital to produce fossil fuel energy
+kre0=1       initial capital to produce renewable energy
+bk=0.25 coefficient on business capital stock (plant and equipment) in the production function
+bkf=0.1 coefficient on infrastructure capital in the production function
+ben=0.5 coefficient on power in the production function
+k0=20         2022 initial capital
+kf0=3        initial infrastructure capital
+debtqlim = 10
+ek=0.1         Demand for capital stock(?)
+costff=1     Cost of fossil fuel generation
+costre=3     Cost of renewable energy generation
+dep=0.05        Depreciation
+r=0.05          Interest rate
+aff=0.25        Percentage of fossil fuel capital required as input to produce energy
+taxlim=0.5     Tax limit
+min0=10       Production of mining sector in 2022 at time 0
+land0=20      Production of land in 2022 at time 0
+tfp1=1       Total factor productivity at time 1(?)
+phi=0.2        Unit cost of investment increases with growth rate
+fertsh = .5
+
+-------------------------------------------------------------------------------
+all above done by Grace on July 7th, below still need to work on
+--------------------------------------------------------------------------------
+
+pubadgdp(t)..         pubgdp(t) =e= .10;
+
+model sdgfinance using /all/;
+
+poptot.lo(t) = .00001;
+en.lo(t) = .001;
+tsa.lo(t) = .00001;
+pop.lo(a,g,t) = .00000001;
+k.lo(t) = .001;
+kf.lo(t) = .001;
+kff.lo(t) = .001;
+kre.lo(t) = .001;
+conpc.lo(t) = .001;
+q.lo(t) = .0001;
+qpc.lo(t) = .0001;
+enh.lo(t) = .001;
+enhpc.lo(t) = .001;
+kf.lo(t) = .001;
+schooltot.lo(t) = .001;
+schoolage.lo(t) = 001;
+fbyage.lo(a,t) = .001;
+
+School continuation rate from age 6 to 22 eq60(t).. cont("6",t) =e= 1;
