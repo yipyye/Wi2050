@@ -1,3 +1,5 @@
+******This is a list of all hard-coded variables in Egypt Model******
+
 kff0=10       initial capital to produce fossil fuel energy
 kre0=1       initial capital to produce renewable energy
 bk=0.25 coefficient on business capital stock (plant and equipment) in the production function
